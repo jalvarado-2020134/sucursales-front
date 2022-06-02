@@ -6,7 +6,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" routerLink="/home" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" routerLink="/home" aria-current="page"  *ngIf ="token == null" >Home</a> 
           <a *ngIf="!token" class="nav-link" routerLink="/login">Login</a>
           <a *ngIf="!token" class="nav-link" routerLink="/register">Register</a>
         </div>

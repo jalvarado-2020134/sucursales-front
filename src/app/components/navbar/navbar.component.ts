@@ -19,4 +19,4 @@ export class NavbarComponent implements OnInit {
     this.role = this.userRest.getIdentity().role;
   }
 
-}
+} 
