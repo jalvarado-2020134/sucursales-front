@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserRestService {
+export class CompanyRestService {
   httpOptions = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(
@@ -16,7 +16,10 @@ export class UserRestService {
     console.log(message);
   }
 
-
+  register(params:{}){
+    let body = JSON.stringify(params);
+    return this.http.post(environment.baseUrl + 'company/register', body, {headers: this.httpOptions});
+  }
 
   login(params: {}){
     let body = JSON.stringify(params); 

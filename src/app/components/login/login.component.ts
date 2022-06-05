@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserModel } from 'src/app/models/user.model';
-import { UserRestService } from 'src/app/services/userRest/user-rest.service';
+import { CompanyModel } from 'src/app/models/company.model';
+import { CompanyRestService } from 'src/app/services/companyRest/company-rest.service';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +9,19 @@ import { UserRestService } from 'src/app/services/userRest/user-rest.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user:UserModel;
+  company:CompanyModel;
 
-  constructor(private userRest: UserRestService,
+  constructor(private companyRest: CompanyRestService,
               public router: Router) {
-    this.user = new UserModel('','','','','','','','');
+    this.company = new CompanyModel('','','','','','','','');
   }
 
   ngOnInit(): void {
   }
 
   login(){
-    console.log(this.user),
-    this.userRest.login(this.user).subscribe({
+    console.log(this.company),
+    this.companyRest.login(this.company).subscribe({
       next: (res:any)=>{
         alert(res.message);
         localStorage.setItem('token', res.token);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserRestService } from 'src/app/services/userRest/user-rest.service';
+import { CompanyRestService } from 'src/app/services/companyRest/company-rest.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +11,12 @@ export class NavbarComponent implements OnInit {
   role:any;
 
   constructor(
-    private userRest: UserRestService
+    private companyRest: CompanyRestService
   ) { }
 
   ngOnInit(): void {
-    this.token = this.userRest.getToken();
-    this.role = this.userRest.getIdentity().role;
+    this.token = this.companyRest.getToken();
+    this.role = this.companyRest.getIdentity().role;
   }
 
 } 
