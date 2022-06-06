@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { CompanyModel } from 'src/app/models/company.model';
 import { CompanyRestService } from 'src/app/services/companyRest/company-rest.service';
 
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   company:CompanyModel;
 
   constructor(private companyRest: CompanyRestService,
-              public router: Router) {
+              private router: Router) {
     this.company = new CompanyModel('','','','','','','','');
   }
 
@@ -20,15 +21,22 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log(this.company),
     this.companyRest.login(this.company).subscribe({
       next: (res:any)=>{
-        alert(res.message);
+       Swal.fire({
+         icon: 'success',
+         title: res.message + ',Sesión Iniciada'
+       })
         localStorage.setItem('token', res.token);
         localStorage.setItem('identity', JSON.stringify(res.already));
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('');
       },
-      error: (err)=> alert(err.error.message || err.error)
+      error: (err)=> {
+        Swal.fire({
+          icon: 'error',
+          title: err.error.message || err.error,
+        })
+      }
 
     })
   }

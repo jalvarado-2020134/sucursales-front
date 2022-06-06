@@ -45,15 +45,22 @@
                                                 <input [(ngModel)]="company.password" name="password" type="password" id="form3Example1n" class="form-control form-control-lg">
                                                 <label class="form-label" for="form3Example1n">Password</label>
                                             </div>
-                                            <div class="d-flex justify-content-end pt-3">
-                                                <button [disabled]="!registerForm.form.valid" type="submit" style="background-color:aqua" class="btn btn-succes btn-lg ms-2">Registrarse</button>
-
-                                            </div>
+                                            
                                             
                                         </div>
                                     </div>
                                 </form>
+                                <p>
+                                    <input ngModel name="checkboxTerms" class="form-check-input " type="checkbox"
+                                        required>
+                                    <label class="form-check-label ms-2">Aceptar <a
+                                            href="https://en.wikipedia.org/wiki/Contractual_term" target="_blank"
+                                            rel="noopener noreferrer">terminos y condiciones</a></label>
+                                </p>
+                                <button [disabled]="!registerForm.form.valid" class="btn btn-outline-danger btn-lg px-5" type="submit" >Registrarse</button>
+
                             </div>
+
                         </div>
                     </div>
                 </div>
