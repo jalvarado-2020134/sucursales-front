@@ -31,8 +31,8 @@ export class CompanyComponent implements OnInit{
         getCompanies(){
             this.companyRest.getCompanies().subscribe({
                 next:(res:any)=>{
-                    this.companies = res.company,
-                    console.log(this.company);
+                    this.companies = res.companies,
+                    console.log(this.companies);
                 },
                 error: (err)=>console.log(err)
             })

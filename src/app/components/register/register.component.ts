@@ -27,9 +27,9 @@ export class RegisterComponent implements OnInit{
             next:(res:any)=>{
                 Swal.fire({
                     icon: 'success',
-                    title: res.message + ', Cuenta creada Correctamente',
+                    title: res.message
                 });
-                this.router.navigateByUrl('/login');
+                this.router.navigateByUrl('');
             },
             error:(err)=>{
                 Swal.fire({

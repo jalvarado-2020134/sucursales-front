@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
        })
         localStorage.setItem('token', res.token);
         localStorage.setItem('identity', JSON.stringify(res.already));
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/home');
       },
       error: (err)=> {
         Swal.fire({
