@@ -17,11 +17,23 @@ export class OfficeRestService{
     ){}
 
 
-    getBranches(){
+    getOffices(){
         return this.http.get(environment.baseUrl + 'office/getOffices',{headers: this.httpOptions});
     }
 
-    addBranch(params:{}){
+    getOffice(id:string){
+        return this.http.get(environment.baseUrl + 'office/getOffice/' + id,{headers: this.httpOptions});
+    }
+
+    addOffice(params:{}){
         return this.http.post(environment.baseUrl + 'office/addOffice', params,{headers: this.httpOptions});
+    }
+
+    updateOffice(id:string,params:{}){
+        return this.http.put(environment.baseUrl + 'office/update/' + id,params,{headers: this.httpOptions});
+    }
+
+    deleteOffice(id: string){
+        return this.http.delete(environment.baseUrl + 'office/delete/' + id,{headers: this.httpOptions})
     }
 }

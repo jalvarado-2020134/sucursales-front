@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CompanyComponent } from './components/company/company.component';
 import {OfficeComponent} from './components/offices/office.component';
+import { SearchPipe } from './pipes/search.pipe';
+import {ProductsComponent} from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {OfficeComponent} from './components/offices/office.component';
     HomeComponent,
     RegisterComponent,
     CompanyComponent,
-    OfficeComponent
+    OfficeComponent,
+    SearchPipe,
+    ProductsComponent
   ],
   imports: [
    BrowserModule,

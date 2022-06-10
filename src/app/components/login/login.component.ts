@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
          title: res.message + ',Sesión Iniciada'
        })
         localStorage.setItem('token', res.token);
-        localStorage.setItem('identity', JSON.stringify(res.already));
+        localStorage.setItem('identity', JSON.stringify(res.checkCompany));
         this.router.navigateByUrl('/home');
       },
       error: (err)=> {
