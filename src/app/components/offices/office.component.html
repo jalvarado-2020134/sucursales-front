@@ -90,7 +90,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   <div class="offcanvas-body">
 
-    <form (ngSubmit)="update()" *ngIf="officeGetId">
+    <form (ngSubmit)="updateOffice()" *ngIf="officeGetId">
       <div class="mb-3">
         <label for="inputNameUpdate" class="form-label">Name</label>
         <input [(ngModel)]="officeGetId.name" name="name" type="text" class="form-control" id="inputNameUpdate">

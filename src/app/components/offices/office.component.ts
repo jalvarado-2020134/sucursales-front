@@ -33,7 +33,7 @@ export class OfficeComponent implements OnInit{
 
     getOffices(){
         this.officeRest.getOffices().subscribe({
-            next: (res: any)=> this.offices = res.offices,
+            next: (res: any)=> this.office = res.office,
             error: (err) => console.log(err)
         })
     }
