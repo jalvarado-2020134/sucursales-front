@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CompanyComponent } from './components/company/company.component';
 import {OfficeComponent} from './components/offices/office.component';
+import {ProfileComponent} from './components/profile/profile.component';
 import {ProductsComponent} from './components/products/products.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'company', component: CompanyComponent},
   {path: 'office', component: OfficeComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: 'product', component: ProductsComponent},
 ];
 

@@ -6,11 +6,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" routerLink="" aria-current="page"  *ngIf ="token == null" >Home</a> 
-          <a *ngIf="!token" class="nav-link" routerLink="/login">Login</a>
+          <a class="nav-link active" routerLink="/home" aria-current="page"  *ngIf="token" >Home</a> 
+          <a class="nav-link active" routerLink="/company" aria-current="page"  *ngIf="token" >Empresa</a>
+          <a class="nav-link active" routerLink="" aria-current="page"  *ngIf="token" >Sucursales</a>
+          <a class="nav-link active" routerLink="/product" aria-current="page"  *ngIf="token" >Productos</a>
+          <a class="nav-link active" routerLink="/profile" aria-current="page"  *ngIf="token" >Mi Perfil</a>
+          <a *ngIf="!token" class="nav-link" routerLink="">Login</a>
           <a *ngIf="!token" class="nav-link" routerLink="/register">Register</a>
         </div>
-        
+        <div class="navbar-nav" *ngIf="token">
+          <a class="nav-link" (click)="logOut();" type="button" routerLink="/login">Log Out</a>  
+        </div>
       </div>
     </div>
   </nav>

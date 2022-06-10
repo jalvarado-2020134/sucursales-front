@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CompanyComponent } from './components/company/company.component';
 import {OfficeComponent} from './components/offices/office.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { ProfileComponent } from './components/profile/profile.component';
 import {ProductsComponent} from './components/products/products.component';
 
 @NgModule({
@@ -23,6 +24,7 @@ import {ProductsComponent} from './components/products/products.component';
     CompanyComponent,
     OfficeComponent,
     SearchPipe,
+    ProfileComponent,
     ProductsComponent
   ],
   imports: [

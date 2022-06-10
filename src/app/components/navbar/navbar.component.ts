@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CompanyRestService } from 'src/app/services/companyRest/company-rest.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +13,7 @@ export class NavbarComponent implements OnInit {
   role:any;
 
   constructor(
-    private companyRest: CompanyRestService
+    private companyRest: CompanyRestService, private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -19,6 +21,15 @@ export class NavbarComponent implements OnInit {
     this.role = this.companyRest.getIdentity().role;
   }
 
-  
+  logOut(){
+    localStorage.clear();
+    Swal.fire({
+      icon: 'success',
+      title: 'Log Out Successfully'
+      
+    })
+    this.router.navigateByUrl('');
+
+  }
 
 } 
