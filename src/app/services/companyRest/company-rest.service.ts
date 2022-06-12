@@ -6,7 +6,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CompanyRestService {
-  httpOptions = new HttpHeaders().set('Content-Type', 'application/json');
+  httpOptions = new HttpHeaders({
+    'Content-Type': 'application/json', 'Authorization': this.getToken()
+});
 
   constructor(
     private http: HttpClient
@@ -47,4 +49,14 @@ export class CompanyRestService {
     }
     return identity;
   }
+
+
+  updateCompany(id:string,params:{}){
+    return this.http.put(environment.baseUrl + 'company/update/' + id,params,{headers:this.httpOptions});
+}
+
+deleteCompany(id:string){
+  return this.http.delete(environment.baseUrl + 'company/delete/' + id,{headers: this.httpOptions});
+}
+
 }

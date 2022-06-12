@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit{
         private companyRest: CompanyRestService,
         private router: Router
     ){
-        this.company = new CompanyModel('','','','','','','','');
+        this.company = new CompanyModel('','','','','','','','','');
     }
     ngOnInit(): void {   
     }

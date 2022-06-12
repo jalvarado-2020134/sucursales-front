@@ -5,7 +5,7 @@
   }
   
   .user-profile-card .user-profile-header {
-    background: url("http://lorempixel.com/850/280/nature/4/");
+    /* background: url("http://lorempixel.com/850/280/nature/4/"); */
     background-size: cover;
     height: 135px;
   }

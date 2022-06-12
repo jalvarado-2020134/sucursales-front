@@ -8,5 +8,6 @@ export class CompanyModel {
         public password: String,
         public phone: String,
         public role: String,
+        public image: String
     ) {}
 }

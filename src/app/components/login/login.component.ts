@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private companyRest: CompanyRestService,
               private router: Router) {
-    this.company = new CompanyModel('','','','','','','','');
+    this.company = new CompanyModel('','','','','','','','','');
   }
 
   ngOnInit(): void {
