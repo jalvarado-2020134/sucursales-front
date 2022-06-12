@@ -18,22 +18,22 @@ export class OfficeRestService{
 
 
     getOffices(){
-        return this.http.get(environment.baseUrl + '/getOffices',{headers: this.httpOptions});
+        return this.http.get(environment.baseUrl + 'office/getOffices',{headers: this.httpOptions});
     }
 
     getOffice(id:string){
-        return this.http.get(environment.baseUrl + '/getOffice/' + id,{headers: this.httpOptions});
+        return this.http.get(environment.baseUrl + 'office/getOffice/' + id,{headers: this.httpOptions});
     }
 
     addOffice(params:{}){
-        return this.http.post(environment.baseUrl + '/addOffice', params,{headers: this.httpOptions});
+        return this.http.post(environment.baseUrl + 'office/addOffice', params,{headers: this.httpOptions});
     }
 
     updateOffice(id:string,params:{}){
-        return this.http.put(environment.baseUrl + '/update/' + id,params,{headers: this.httpOptions});
+        return this.http.put(environment.baseUrl + 'office/update/' + id,params,{headers: this.httpOptions});
     }
 
     deleteOffice(id: string){
-        return this.http.delete(environment.baseUrl + '/delete/' + id,{headers: this.httpOptions})
+        return this.http.delete(environment.baseUrl + 'office/delete/' + id,{headers: this.httpOptions})
     }
 }

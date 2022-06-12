@@ -41,7 +41,7 @@ export class CompanyComponent implements OnInit{
         getCompany(id:string){
             this.companyRest.getCompany(id).subscribe({
                 next:(res:any)=>{
-                    this.companyUpdate_Admin = res.company
+                    this.companyUpdate = res.company
                 },
                 error:(err)=> {alert(err.error.message)}
             })
@@ -67,7 +67,7 @@ export class CompanyComponent implements OnInit{
             })
         }
 
-        updateCompany_Admin(){
+        updateCompany(){
             this.companyUpdate.password = undefined;
             this.companyRest.updateCompany_Admin(this.companyUpdate._id, this.companyUpdate).subscribe({
                 next:(res:any)=>{
@@ -85,6 +85,24 @@ export class CompanyComponent implements OnInit{
                     })
                     this.getCompanies()
                 },
+            })
+        }
+        
+        deleteCompany(id:string){
+            this.companyRest.deleteCompany(id).subscribe({
+                next:(res:any)=>{
+                    Swal.fire({
+                        icon: 'success',
+                        title: res.message
+                    });
+                    this.getCompanies();
+                },
+                error:(err)=>{
+                    Swal.fire({
+                        icon: 'error',
+                        title: err.error.message
+                    })
+                }
             })
         }
 }

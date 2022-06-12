@@ -33,8 +33,11 @@ export class OfficeComponent implements OnInit{
 
     getOffices(){
         this.officeRest.getOffices().subscribe({
-            next: (res: any)=> this.office = res.office,
-            error: (err) => console.log(err)
+            next: (res: any)=> {
+                this.offices = res.office,
+                console.log(this.office)
+            },
+            error: (err)=>console.log(err)
         })
     }
 
@@ -80,8 +83,8 @@ export class OfficeComponent implements OnInit{
         this.officeRest.deleteOffice(id).subscribe({
             next:(res:any)=>{
                 Swal.fire({
-                    icon: 'success',
-                    title: res.message + '' + res.deleteOffice.name
+                    icon: 'warning',
+                    title: res.message
                 });
                 this.getOffices();
             },

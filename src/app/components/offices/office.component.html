@@ -1,8 +1,10 @@
 <app-navbar></app-navbar>
 <hr>
 <div class="text-center">
-  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#officeModal"><svg
-       width="8" height="8" fill="currentColor"
+  <img src="https://cdn-icons-png.flaticon.com/512/2395/2395180.png" class="img-responsive img-rounded" widht="8" height="50">
+
+  <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#officeModal"><svg
+        width="8" height="8" fill="currentColor"
       class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
       
     </svg>New Office</button>
@@ -12,7 +14,7 @@
   <table class=" table table-warning table-bordered bg-warning">
     <thead>
       <tr>
-        <th class="bg-success " scope="col">No.</th>
+        <th class="bg-success " scope="col">#</th>
         <th scope="  col">Name</th>
         <th scope="  col">Address</th>
         <th scope="  col">Options</th>
@@ -86,10 +88,10 @@
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdate" aria-labelledby="offcanvasUpdateLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasUpdateLabel">Update Office/h5>
+    <h5 class="offcanvas-title" id="offcanvasUpdateLabel">Update Office</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  <div class="offcanvas-body">
-
+  </div>
+    <div class="offcanvas-body">
     <form (ngSubmit)="updateOffice()" *ngIf="officeGetId">
       <div class="mb-3">
         <label for="inputNameUpdate" class="form-label">Name</label>
@@ -97,7 +99,7 @@
       </div>
       <div class="mb-3">
         <label for="InputAddressUpdate" class="form-label">Address</label>
-        <input [(ngModel)]="officeGetId.office" name="address" type="text" class="form-control"
+        <input [(ngModel)]="officeGetId.address" name="address" type="text" class="form-control"
           id="inputAddressUpdate">
       </div>
       <div class="text-center">

@@ -1,6 +1,9 @@
 <app-navbar></app-navbar>
 
+<br>
 <div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/2395/2395180.png" class="img-responsive img-rounded" widht="8" height="50">
+
     <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="search">
@@ -32,33 +35,34 @@
 </label>
 
 <label class="custom-radio-checkbox m-3">
-    <input class="custom-radio-checkbox_input" type="radio" name="genero" value="stockDes"
+    <input class="custom-radio-checkbox__input" type="radio" name="genero" value="stockDes"
         checked(click)="getProductsByDes()">
-    <span class="custom-radio-checkbox-text  m-2">Stock Descendente</span>
+    <span class="custom-radio-checkbox__text">Stock Descendente</span>
 </label>
 
 <label class="custom-radio-checkbox m-3">
-    <input class="custom-radio-checkbox_input" type="radio" name="genero" value="byName"
+    <input class="custom-radio-checkbox__input" type="radio" name="genero" value="byName"
         checked(click)="getProductByName()">
-    <span class="custom-radio-checkbox_text">Name</span>
+    <span class="custom-radio-checkbox__text">Name</span>
 </label>
 
 <label class="custom-radio-checkbox m-3">
-    <input class="custom-radio-checkbox_input" type="radio" name="genero" value="byProvider"
+    <input class="custom-radio-checkbox__input" type="radio" name="genero" value="byProvider"
         checked(click)="getProductByProvider()">
-    <span class="custom-radio-checkbox_text">Provider</span>
+    <span class="custom-radio-checkbox__text">Provider</span>
 </label>
 
 <div class="text-center m-3">
     <button type="button" class="btn btn-outline-success m-4" data-bs-toggle="modal" data-bs-target="#exampleModal">New
         Product</button>
-    <button type="button" class="btn btn-outline m-2" data-bs-target="#Product" data-bs-toggle="modal"
+    <button type="button" class="btn btn-outline-primary m-2" data-bs-target="#Product" data-bs-toggle="modal"
         data-bs-dismiss="modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill"
             viewBox="0 0 16 16">
             <path
                 d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
-        </svg>Send
+        </svg>
+        Send
 
     </button>
 
@@ -72,7 +76,7 @@
             <h6 class="card-subtitle mb-2 text-muted">Provider: {{product.provider}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Stock:{{product.stock}}</h6>
             <button (click)="getProduct(product._id)" class="btn btn-success m-2" data-bs-toggle="offcanvas"
-                data-bs-target="#offCanvasExample" aria-controls="offCanvasExample">Update
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Update
             </button>
             <button (click)="deleteProduct(product._id)" class="btn btn-danger">Delete
 
@@ -116,7 +120,7 @@
                 </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button (click)="newProduct(newProductForm)" type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Save Changes</button>
 
                 </div>
@@ -157,3 +161,4 @@
 
     </div>
 </div>
+

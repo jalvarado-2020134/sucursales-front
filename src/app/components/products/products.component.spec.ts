@@ -20,5 +20,5 @@ describe('ProductsComponent',()=>{
 
     it('should create',()=>{
         expect(component).toBeTruthy();
-    })
-})
+    });
+});

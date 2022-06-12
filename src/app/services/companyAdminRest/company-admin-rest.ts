@@ -34,11 +34,11 @@ export class CompanyAdminRestService{
     }
 
     updateCompany_Admin(id:string,params:{}){
-        return this.http.put(environment.baseUrl + 'company/updateCompany_Admin' + id,params,{headers: this.httpOptions});
+        return this.http.put(environment.baseUrl + 'company/updateCompany_Admin/' + id,params,{headers: this.httpOptions});
     }
 
-    deleteCompany_Admin(id:string){
-        return this.http.delete(environment.baseUrl + 'company/deleteCompany_Admin' + id,{headers: this.httpOptions})
+    deleteCompany(id:string){
+        return this.http.delete(environment.baseUrl + 'company/deleteCompany_Admin/' + id,{headers: this.httpOptions})
     }
 
 

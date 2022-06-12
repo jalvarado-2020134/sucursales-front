@@ -24,9 +24,9 @@ export class ProductsComponent implements OnInit{
 
     constructor(
         private productRest: ProductRestService,
-        private  officeRest: OfficeRestService
+        private  officeRest: OfficeRestService,
     ){
-        this.product = new ProductModel('','',0),
+        this.product = new ProductModel('','',0,),
         this.office = new OfficeModel('','','')
 
     }
@@ -36,8 +36,11 @@ export class ProductsComponent implements OnInit{
 
     getProducts(){
         this.productRest.getProducts().subscribe({
-            next: (res:any)=> this.products = res.products,
-            error: (err)=> console.log(err)
+            next: (res: any)=> {
+                this.products = res.products,
+                console.log(this.products)
+            },
+            error: (err)=>console.log(err)
         })
     }
 
@@ -134,4 +137,25 @@ export class ProductsComponent implements OnInit{
             error:(err)=> console.log(err)
         })
     }
+
+    getOffices(){
+        this.officeRest.getOffices().subscribe({
+            next:(res: any)=> this.office = res.office,
+            error:(err)=> console.log(err)
+        })
+    }
+
+    getOffice(id:string){
+        this.officeRest.getOffice(id).subscribe({
+            next:(res:any)=>{
+                this.officeGetId = res.office,
+                console.log(this.officeGetId);
+            },
+
+            error:(err)=> alert(err.error.message)
+        })
+    }
+
+    
+    
 }
