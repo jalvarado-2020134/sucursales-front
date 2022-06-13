@@ -16,7 +16,6 @@ export class CompanyComponent implements OnInit{
     companyUpdate: any;
     companyUpdate_Admin: any;
     deleteCompany_Admin: any;
-    
 
     constructor(private companyRest: CompanyAdminRestService,
         )
@@ -93,7 +92,7 @@ export class CompanyComponent implements OnInit{
                 next:(res:any)=>{
                     Swal.fire({
                         icon: 'success',
-                        title: res.message
+                        title: res.message  + ' : ' + res.deleteCompany.name
                     });
                     this.getCompanies();
                 },

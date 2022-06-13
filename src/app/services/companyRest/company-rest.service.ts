@@ -51,7 +51,7 @@ export class CompanyRestService {
   }
 
 
-  updateCompany(id:string,params:{}){
+updateCompany(id:string,params:{}){
     return this.http.put(environment.baseUrl + 'company/update/' + id,params,{headers:this.httpOptions});
 }
 

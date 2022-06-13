@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit{
     offices: any;
     productId: any;
     search: any;
+    provider: any;
     officeGetId: any;
     idOffice: any;
     idProduct: any;
@@ -89,7 +90,7 @@ export class ProductsComponent implements OnInit{
             next:(res:any)=>{
                 Swal.fire({
                     icon: 'success',
-                    title: res.message
+                    title: res.message + ' : ' + res.deleteProduct.name
                 });
                 this.getProducts();
             },
@@ -120,21 +121,26 @@ export class ProductsComponent implements OnInit{
         })
     }
 
-    getProductByName(){
-        this.productRest.getProductsByName().subscribe({
-            next:(res:any)=>{
-                this.products = res.products, console.log(this.products)
-            },
+    name: any;
+
+
+    getProductsByName(){
+        let params={
+            name: this.name
+        }
+        this.productRest.getProductsByName(params).subscribe({
+            next: (res:any)=>{this.products = res.product, console.log(this.product)},
             error: (err)=> console.log(err)
         })
     }
 
-    getProductByProvider(){
-        this.productRest.getProductByProvider().subscribe({
-            next: (res:any)=>{
-                this.products = res.products, console.log(this.products)
-            },
-            error:(err)=> console.log(err)
+    getProductsByProvider(){
+        let params ={
+            provider: this.provider
+        }
+        this.productRest.getProductByProvider(params).subscribe({
+            next:(res:any)=>{this.products = res.product, console.log(this.product)},
+            error: (err)=> console.log(err)
         })
     }
 

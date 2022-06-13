@@ -1,7 +1,7 @@
 export class ProductModel{
     constructor(
-        public name: string,
-        public provider: string,
-        public stock: number
+        public name: String,
+        public provider: String,
+        public stock: Number
     ){}
 }

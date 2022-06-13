@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CompanyModel } from 'src/app/models/company.model';
 import { CompanyRestService } from 'src/app/services/companyRest/company-rest.service';
 import { UploadImageService } from 'src/app/services/uploadImage/upload-image.service';
@@ -19,13 +20,14 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     public CompanyRest: CompanyRestService, 
+    private router: Router,
     private uploadImageRest: UploadImageService) {
     this.ProfileModel = new CompanyModel('', '', '', '', '', '', '', '','');
     this.url = environment.baseUrl;
   }
   ngOnInit(): void {}
 
-  updateOffice() {
+  updateCompany() {
     this.userGetId = this.CompanyRest.getIdentity();
     this.CompanyRest.updateCompany(
       this.userGetId._id,
@@ -50,6 +52,8 @@ export class ProfileComponent implements OnInit {
           icon: 'warning',
           title: res.message,
         });
+        localStorage.clear();
+        this.router.navigateByUrl('');
         //this.get_company();
       },
       error: (err) => {

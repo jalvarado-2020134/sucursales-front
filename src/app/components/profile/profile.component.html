@@ -12,17 +12,17 @@
             </div>
             <div class="row">
               <div class="text-center">
-                <h4>Perfil</h4>
+                <h4>My Company</h4>
                 <br />
               </div>
               <div class="panel-footer"></div>
               <div class="container text-center">
                 <p>
-                  <small>Nombre</small>
+                  <small>Name</small>
                    {{CompanyRest.getIdentity().name}} 
                 </p>
                 <p>
-                  <small>Tipo Empresa</small>
+                  <small>Type Of Company</small>
                   {{CompanyRest.getIdentity().typeOfCompany}}
                 </p>
                 <p>
@@ -51,19 +51,19 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar mi perfil</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Update My Company</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
         <form>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Nombres</label>
+            <label for="exampleInputPassword1" class="form-label">Name</label>
             <input type="text" class="form-control"
             name="email" #name="ngModel" [(ngModel)]="ProfileModel.name">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">typeOfCompany</label>
+            <label for="exampleInputPassword1" class="form-label">Type Of Company</label>
             <input type="text" class="form-control"
             name="typeOfCompany" #typeOfCompany="ngModel" [(ngModel)]="ProfileModel.typeOfCompany">
           </div>
@@ -78,7 +78,7 @@
             name="edad" #edad="ngModel" [(ngModel)]="ProfileModel.edad">
           </div> -->
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Correo</label>
+            <label for="exampleInputEmail1" class="form-label">Email</label>
             <input type="email" class="form-control"
             name="email" #email="ngModel" [(ngModel)]="ProfileModel.email">
           </div>
@@ -87,8 +87,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" data-bs-dismiss="modal" class="btn btn-primary" (click)="updateOffice()">Guardar Cambios</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
+        <button type="button" data-bs-dismiss="modal" class="btn btn-primary" (click)="updateCompany()">SaveChanges</button>
       </div>
     </div>
   </div>

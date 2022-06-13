@@ -66,7 +66,7 @@ export class OfficeComponent implements OnInit{
     }
 
     updateOffice(){
-        this.officeGetId.company = undefined
+        this.officeGetId.company = undefined;
         this.officeRest.updateOffice(this.officeGetId._id, this.officeGetId).subscribe({
             next:(res:any)=>{
                 Swal.fire({
@@ -84,7 +84,7 @@ export class OfficeComponent implements OnInit{
             next:(res:any)=>{
                 Swal.fire({
                     icon: 'warning',
-                    title: res.message
+                    title: res.message  + ' : ' + res.officeDelete.name
                 });
                 this.getOffices();
             },

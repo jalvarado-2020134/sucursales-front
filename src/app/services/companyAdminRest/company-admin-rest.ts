@@ -22,7 +22,7 @@ export class CompanyAdminRestService{
     ){}
 
     getCompany(id:string){
-        return this.http.get(environment.baseUrl + 'company/getCompany' + id,{headers:this.httpOptions});
+        return this.http.get(environment.baseUrl + 'company/getCompany/' + id,{headers:this.httpOptions});
     }
 
     getCompanies(){
