@@ -4,6 +4,7 @@ import { OfficeRestService } from "src/app/services/officeRest/office-rest.servi
 import { ProductModel } from "src/app/models/products.model";
 import { OfficeModel } from "src/app/models/office.model";
 import Swal from "sweetalert2";
+import { SelectorMatcher } from "@angular/compiler";
 
 @Component({
     selector: 'app-products',
@@ -17,8 +18,8 @@ export class ProductsComponent implements OnInit{
     office: OfficeModel;
     offices: any;
     productId: any;
-    search: any;
-    provider: any;
+    search: string = '';
+    provider: string='';
     officeGetId: any;
     idOffice: any;
     idProduct: any;

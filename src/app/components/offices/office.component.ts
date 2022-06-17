@@ -14,7 +14,7 @@ export class OfficeComponent implements OnInit{
     offices: any;
     idCompany: any;
     office: OfficeModel;
-    officeGetId: any;
+    officeId: any;
     token: any;
     role: any;
     idOffice: any;
@@ -43,8 +43,8 @@ export class OfficeComponent implements OnInit{
 
     getOffice(id:string){
         this.officeRest.getOffice(id).subscribe({
-            next:(res:any)=>{this.officeGetId = res.office
-            console.log(this.officeGetId);
+            next:(res:any)=>{this.officeId = res.office
+            console.log(this.officeId);
         },
         error: (err)=> alert(err.error.message)
     })
@@ -66,13 +66,14 @@ export class OfficeComponent implements OnInit{
     }
 
     updateOffice(){
-        this.officeGetId.company = undefined;
-        this.officeRest.updateOffice(this.officeGetId._id, this.officeGetId).subscribe({
+        this.officeId.company = undefined;
+        this.officeRest.updateOffice(this.officeId._id, this.officeId).subscribe({
             next:(res:any)=>{
                 Swal.fire({
                     icon: 'success',
                     title: res.message
                 })
+                console.log(this.officeId);
                 this.getOffices();
             },
             error:(err)=> alert(err.error.message || err.error)

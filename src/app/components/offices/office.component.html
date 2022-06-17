@@ -93,14 +93,14 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
     <div class="offcanvas-body">
-    <form (ngSubmit)="updateOffice()" *ngIf="officeGetId">
+    <form (ngSubmit)="updateOffice()" *ngIf="officeId">
       <div class="mb-3">
         <label for="inputNameUpdate" class="form-label">Name</label>
-        <input [(ngModel)]="officeGetId.name" name="name" type="text" class="form-control" id="inputNameUpdate">
+        <input [(ngModel)]="officeId.name" name="name" type="text" class="form-control" id="inputNameUpdate">
       </div>
       <div class="mb-3">
         <label for="InputAddressUpdate" class="form-label">Address</label>
-        <input [(ngModel)]="officeGetId.address" name="address" type="text" class="form-control"
+        <input [(ngModel)]="officeId.address" name="address" type="text" class="form-control"
           id="inputAddressUpdate">
       </div>
       <div class="text-center">

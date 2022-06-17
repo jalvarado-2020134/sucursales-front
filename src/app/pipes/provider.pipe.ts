@@ -9,8 +9,8 @@ export class ProviderPipe implements PipeTransform{
         if(provider === undefined){
             return products;
         }else{
-            return products.filter((products:any)=>{
-                return products.provider.toLowerCase().includes(provider.toLowerCase())
+            return products.filter((product:any)=>{
+                return product.provider.toLowerCase().includes(provider.toLowerCase())
 
             })
         }
